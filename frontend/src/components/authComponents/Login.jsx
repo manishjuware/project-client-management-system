@@ -8,7 +8,10 @@ const Login = ({ showAlert }) => {
     let navigate = useNavigate();
 
     const onChange = (event) => {
-        setCredentials({ ...credentials, [event.target.name]: event.target.value });
+        setCredentials({
+            ...credentials,
+            [event.target.name]: event.target.value,
+        });
     };
 
     //* calling the login api
@@ -21,14 +24,17 @@ const Login = ({ showAlert }) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email: credentials.email, password: credentials.password }),
+            body: JSON.stringify({
+                email: credentials.email,
+                password: credentials.password,
+            }),
         });
         const json = await response.json();
         if (json.success) {
             // if login is successful: store auth-token and redirect to "/"
             localStorage.setItem("auth-token", json.authToken);
             showAlert("success", "Login Successful");
-            navigate("/projects");
+            navigate("/");
         } else {
             showAlert("danger", "Invalid Credientials : Login Failed");
         }
@@ -37,7 +43,8 @@ const Login = ({ showAlert }) => {
     return (
         <div
             className="container border border-2 rounded rounded-4 border-primary mt-5 p-5 "
-            style={{ maxWidth: "570px" }}>
+            style={{ maxWidth: "570px" }}
+        >
             <h2 className="text-center">Login</h2>
 
             <form onSubmit={handleSubmit}>

@@ -29,7 +29,7 @@ const Clients = ({ showAlert }) => {
 
     if (error) return <Error error={error} />;
 
-    let rowIndex = 0;
+    let rowIndex = 1;
 
     return (
         <>
