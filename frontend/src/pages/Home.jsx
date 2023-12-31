@@ -7,6 +7,8 @@ export default function Home() {
         //* if user doesn't have the auth-token then redirect user to login screen
         if (localStorage.getItem("auth-token")) {
             navigate("/projects");
+        } else {
+            navigate("/login");
         }
         // eslint-disable-next-line
     }, []);

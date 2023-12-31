@@ -10,6 +10,7 @@ import Alert from "./components/utilityComponents/Alert";
 import Projects from "./components/projectComponents/Projects";
 import Clients from "./components/clientComponents/Clients";
 import Project from "./components/projectComponents/Project";
+import Home from "./pages/Home";
 
 function App() {
     const [alert, setAlert] = useState(null);
@@ -30,17 +31,7 @@ function App() {
                 <Alert alert={alert} />
                 <div className="container">
                     <Routes>
-                        <Route
-                            exact
-                            path="/"
-                            element={
-                                localStorage.getItem("auth-token") ? (
-                                    <Projects />
-                                ) : (
-                                    <Login />
-                                )
-                            }
-                        />
+                        <Route exact path="/" element={<Home />} />
                         {/* <Route exact path="/about" element={<About />} /> */}
                         <Route exact path="/projects" element={<Projects />} />
                         <Route
