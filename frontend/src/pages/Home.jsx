@@ -1,16 +1,13 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import Projects from "../components/projectComponents/Projects";
+import Login from "../components/authComponents/Login";
 
 export default function Home() {
-    let navigate = useNavigate();
-    useEffect(() => {
-        //* if user doesn't have the auth-token then redirect user to login screen
-        if (localStorage.getItem("auth-token")) {
-            navigate("/projects");
-        } else {
-            navigate("/login");
-        }
-        // eslint-disable-next-line
-    }, []);
-    return <div>Home</div>;
+    return (
+        <>
+            {
+                //* if user doesn't have the auth-token then redirect user to login screen
+                localStorage.getItem("auth-token") ? <Projects /> : <Login />
+            }
+        </>
+    );
 }
