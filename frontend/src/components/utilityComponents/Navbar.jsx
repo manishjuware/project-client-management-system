@@ -16,7 +16,7 @@ export default function Navbar() {
                         to={!localStorage.getItem("auth-token") ? "/" : "/projects"}>
                         <div className="d-flex">
                             <img src={pmsLogo} alt="pms logo" width={"40px"} height={"40px"} />
-                            <h2 className="">PMS</h2>
+                            <h2 className="">PROGER</h2>
                         </div>
                     </NavLink>
                     <button
