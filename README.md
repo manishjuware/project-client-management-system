@@ -3,4 +3,4 @@
 
 ### Web based tool to maintain project details like deadlines, client details, tasks, etc.
 
-## [View project Here](https://proger-web.netlify.app/)
+## [View project Here](https://proger-web.netlify.app)
